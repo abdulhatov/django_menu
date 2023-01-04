@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+<div class="main">
+    <nav>
+        <ul class="topmenu">
+            {% for node in menus %}
+                {% include "menu/menu.html" %}
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}

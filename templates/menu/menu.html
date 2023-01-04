@@ -1,0 +1,14 @@
+<li>
+    <a href="{{ node.get_absolute_url }}" class="active">{{ node.title }}</a>
+    <span class="fa fa-angle-down"></span>
+    {% if node.child.count %}
+        <ul class="submenu">
+            {% for child in node.child.only %}
+                {% with node=child %}
+                    {% include "menu/menu.html" %}
+                {% endwith %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
+
